@@ -1,0 +1,63 @@
+/* ===============================
+   LONDRINA SOLID — SELF HOSTED
+=============================== */
+
+/* Thin 100 */
+@font-face {
+  font-family: "Londrina Solid";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/londrinasolid/v19/flUhRq6sw40kQeJxWNgkLuudGfsgEBU.woff2") format("woff2");
+}
+
+/* Light 300 */
+@font-face {
+  font-family: "Londrina Solid";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/londrinasolid/v19/flUhRq6sw40kQeJxWNgkLuudGfv1GyZ1w.woff2") format("woff2");
+}
+
+/* Regular 400 */
+@font-face {
+  font-family: "Londrina Solid";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/londrinasolid/v19/flUhRq6sw40kQeJxWNgkLuudGfNeKBM.woff2") format("woff2");
+}
+
+/* Black 900 */
+@font-face {
+  font-family: "Londrina Solid";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/londrinasolid/v19/flUhRq6sw40kQeJxWNgkLuudGfvdWyZ1w.woff2") format("woff2");
+}
+
+/* ===============================
+   GLOBAL FONT HELPERS
+=============================== */
+
+.londrina-solid-thin {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 100;
+}
+
+.londrina-solid-light {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 300;
+}
+
+.londrina-solid-regular {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400;
+}
+
+.londrina-solid-black {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 900;
+}

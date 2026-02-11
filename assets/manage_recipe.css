@@ -1,0 +1,118 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f6f6f6}
+
+/* ===== NAVBAR ===== */
+header{
+border-bottom:1px solid #eee;
+padding:.8rem 0;
+background:#fff;
+}
+nav{
+max-width:1200px;
+margin:auto;
+padding:0 2rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.logo img{height:45px}
+.nav-links{
+display:flex;
+gap:2rem;
+list-style:none;
+}
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+.nav-links a.active{
+color:#1e5f38;
+font-weight:bold;
+}
+.admin-info{
+display:flex;
+align-items:center;
+gap:1rem;
+font-weight:bold;
+color:#1e5f38;
+}
+.logout-btn{
+background:#e74c3c;
+color:#fff;
+padding:.5rem 1.2rem;
+border-radius:30px;
+text-decoration:none;
+font-size:.8rem;
+}
+.badge{
+background:#e74c3c;
+color:#fff;
+padding:.3rem .8rem;
+border-radius:20px;
+font-size:.75rem;
+margin-left:.5rem;
+}
+
+/* ===== CONTENT ===== */
+.container{
+max-width:1200px;
+margin:3rem auto;
+background:#fff;
+padding:2rem;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.1)
+}
+
+h1{
+color:#1e5f38;
+font-size:2.3rem;
+margin-bottom:1.5rem
+}
+
+.note{
+background:#fff3cd;
+padding:10px 15px;
+border-radius:8px;
+margin-bottom:15px;
+font-weight:bold;
+color:#856404;
+}
+
+table{width:100%;border-collapse:collapse}
+th{background:#1e5f38;color:#fff;padding:.8rem}
+td{padding:.7rem;border-bottom:1px solid #ddd;text-align:center}
+
+.status-approved{color:green;font-weight:bold}
+.status-pending{color:#f39c12;font-weight:bold}
+.status-rejected{color:red;font-weight:bold}
+
+.actions a{
+margin:.2rem;
+padding:.35rem .7rem;
+border-radius:5px;
+font-size:.85rem;
+font-weight:bold;
+text-decoration:none;
+display:inline-block;
+}
+
+/* ===== FIX: Prevent textboxes and textareas from being resizable ===== */
+input, textarea {
+    resize: none;      /* disables resizing */
+    overflow: auto;    /* ensures scroll appears if content overflows */
+}
+
+
+.view{background:#3498db;color:#fff}
+.approve{background:#27ae60;color:#fff}
+.reject{background:#c0392b;color:#fff}
+.feature{background:#f39c12;color:#fff}
+.unfeature{background:#7f8c8d;color:#fff}
+.delete{background:#000;color:#fff}
+
+.disabled{
+background:#ccc !important;
+pointer-events:none;
+cursor:not-allowed;
+}

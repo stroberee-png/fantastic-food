@@ -1,0 +1,145 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial;background:#f6f6f6}
+
+/* NAVBAR */
+header{
+background:#fff;
+padding:.5rem 0;
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:1px solid #eee;
+}
+
+nav{
+max-width:1200px;
+margin:auto;
+padding:.5rem 2rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo img{height:45px}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:2.5rem;
+}
+
+.nav-links a{text-decoration:none;color:#333}
+.nav-links a.active{font-weight:bold;color:#1e5f38}
+.nav-links a:hover{color:#27ae60}
+
+.menu-button,.btn-nav{
+background:#1e5f38;
+color:#fff;
+padding:.7rem 1.8rem;
+border-radius:50px;
+font-weight:bold;
+border:none;
+cursor:pointer;
+}
+
+/* CONTAINER */
+.container{
+max-width:1000px;
+margin:2rem auto;
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+padding-bottom:2rem;
+}
+
+.top-nav{
+padding:1.5rem 2rem 0 2rem;
+}
+
+.back-btn{
+display:inline-block;
+background:#1e5f38;
+color:#fff;
+padding:.6rem 1.8rem;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.image-box{
+height:350px;
+background-size:cover;
+background-position:center;
+margin-top:1.5rem;
+}
+
+.content{padding:2.5rem}
+
+h1{color:#e74c3c}
+
+.section{margin-top:2.5rem}
+
+/* AVERAGE STARS */
+.avg-stars{
+display:flex;
+gap:.3rem;
+font-size:1.6rem;
+}
+.avg-stars span{color:#ccc}
+.avg-stars span.active{color:#f39c12}
+.avg-stars span.half{
+position:relative;
+display:inline-block;
+color:#ccc;
+}
+.avg-stars span.half::before{
+content:"★";
+position:absolute;
+left:0;
+width:50%;
+overflow:hidden;
+color:#f39c12;
+}
+
+/* RATE HERE STARS */
+.rate-stars{
+display:flex;
+gap:.3rem;
+font-size:1.6rem;
+margin-top:.8rem;
+}
+.rate-stars span{color:#ccc; cursor:pointer;}
+.rate-stars span.active{color:#f39c12}
+
+.rating-meta{
+font-size:.9rem;
+color:#777;
+margin-top:.5rem
+}
+
+textarea{
+width:100%;
+min-height:90px;
+padding:.8rem;
+border-radius:10px;
+border:1px solid #ccc;
+resize:none
+}
+
+button{
+background:#1e5f38;
+color:#fff;
+border:none;
+padding:.6rem 1.8rem;
+border-radius:20px;
+margin-top:.7rem;
+cursor:pointer
+}
+
+.comment{
+border-bottom:1px solid #eee;
+padding:1rem 0
+}
+
+.comment strong{color:#1e5f38}
+.comment small{color:#999}
