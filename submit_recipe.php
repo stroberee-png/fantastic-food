@@ -2,6 +2,11 @@
 session_start();
 include "includes/db.php";
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 /* =========================
    AUTH CHECK
 ========================= */
@@ -34,17 +39,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $prep_time = trim($_POST['prep_time']);
     $status = "Pending";
 
-    // ✅ VALID PREP TIME FORMAT
+    // Validate prep time format
     $prep_pattern = "/^(\d+\s*(hour|hours|hr|hrs))?[\s,]*?(\d+\s*(minute|minutes|min|mins))?$/i";
-
     if (!preg_match($prep_pattern, $prep_time)) {
         $message = "❌ Please enter a valid prep time (e.g. 30 mins, 1 hour, 1 hour 30 minutes).";
     }
 
     $prep_time = mysqli_real_escape_string($conn, $prep_time);
-
     $imageName = null;
 
+    // Attempt image upload first (optional)
     if ($message === "" && !empty($_FILES['recipe_image']['name'])) {
         $imageName = time() . "_" . basename($_FILES['recipe_image']['name']);
         $targetPath = "images/" . $imageName;
@@ -54,20 +58,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 
+    // Proceed with transaction if no errors
     if ($message === "") {
+
+        // Turn off autocommit
+        mysqli_autocommit($conn, FALSE);
+
         $sql = "INSERT INTO recipes 
                 (user_id, category_id, title, ingredients, instructions, prep_time, image, status)
                 VALUES 
                 ('$user_id', '$category_id', '$title', '$ingredients', '$instructions', '$prep_time', '$imageName', '$status')";
 
         if (mysqli_query($conn, $sql)) {
+            // Commit transaction
+            mysqli_commit($conn);
+
+            // Re-enable autocommit
+            mysqli_autocommit($conn, TRUE);
+
+            // Redirect to homepage
             header("Location: index.php");
             exit;
         } else {
-            $message = "❌ Error: " . mysqli_error($conn);
+            // Rollback transaction
+            mysqli_rollback($conn);
+            mysqli_autocommit($conn, TRUE);
+            $message = "❌ Database error: " . mysqli_error($conn);
         }
     }
 }
+
 ?>
 <!DOCTYPE html>
     <html lang="en">
